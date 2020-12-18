@@ -1,0 +1,136 @@
+:root {
+  /* Color */
+  /* 테마 색깔은 무엇으로 할까 */
+  --brown-dark: #5f4339;
+  --brown-light: #be9c91;
+  --brown: #8d6e63;
+  --white: #fafafa;
+  --black: #212121;
+  --black-dark: #000000;
+  --black-light: #484848;
+  --red: #f50057;
+  --blue: #3d5afe;
+
+  /* Padding, Margin */
+  --padding-l: 8px;
+  --padding-m: 12px;
+  --padding-h: 24px;
+  --margin-l: 8px;
+  --margin-m: 12px;
+  --margin-h: 24px;
+
+  /* Text Size */
+  --font-macro: 24px;
+  --font-large: 20px;
+  --font-medium: 16px;
+  --font-small: 12px;
+  --font-micro: 8px;
+  --h1: 30px;
+
+  /* Image Size */
+  --project-img: 200px;
+
+  /* Font Family */
+  --roboto: 'Roboto', sans-serif;
+  --openSans: 'Open Sans', sans-serif;
+}
+
+/* 전역 변수 설정 */
+
+* {
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+  outline: 0px;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--roboto);
+}
+
+p,
+span {
+  font-family: var(--openSans);
+}
+
+/* 1. Navbar Styling */
+#navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--padding-h);
+  background-color: var(--black);
+}
+
+/* Navbar - Logo */
+#navbar .navbar__logo {
+  font-size: var(--font-macro);
+}
+
+#navbar .navbar__logo i {
+  color: var(--blue);
+}
+
+#navbar .navbar__logo a {
+  color: var(--white);
+  font-family: var(--roboto);
+  font-weight: 700;
+}
+
+/* Navbar - Menu */
+#navbar .navbar__menu {
+  display: flex;
+  font-family: var(--roboto);
+  font-size: var(--font-medium);
+  color: var(--white);
+}
+
+#navbar .navbar__menu .navbar__menu_item {
+  margin-right: var(--margin-h);
+}
+
+/* 2. Home */
+#home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background: no-repeat center/cover url(./assets/background.png);
+  padding: calc(var(--padding-h) * 3) 0;
+  text-align: center;
+}
+
+#home .home__avatar {
+  border-radius: 50%;
+  width: var(--project-img);
+  height: var(--project-img);
+  margin-bottom: var(--margin-h);
+}
+
+#home .home_title {
+  font-size: var(--h1);
+  margin-bottom: var(--margin-h);
+}
+
+#home .home_description {
+  margin-bottom: var(--margin-h);
+}
+
+#home .home__contact {
+  font-family: var(--roboto);
+  font-size: var(--font-medium);
+  font-weight: bold;
+  background-color: transparent;
+}

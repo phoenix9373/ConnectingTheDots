@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    .box {
+      width: 150px;
+      height: 150px;
+      background-color: pink;
+      margin: 50px;
+    }
+
+    .box1:hover {
+      background-color: blue;
+      transition: background-color 1s;
+    }
+
+    .box2:hover {
+      border-radius: 50%;
+      background-color: red;
+    }
+
+    .box3:hover {
+      background-color: gray;
+    }
+
+    #foo {
+      border-radius: 50px;
+      width: 50px;
+      height: 50px;
+      background: #c00;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transition: all 10s cubic-bezier(.03, 1.56, .9, -1.15);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box box1"></div>
+  <div class="box box2"></div>
+  <div class="box box3"></div>
+  <div id="foo"></div>
+  <script>
+    const f = document.getElementById('foo');
+    document.addEventListener('click', function (ev) {
+      f.style.left = (ev.clientX - 25) + 'px';
+      f.style.top = (ev.clientY - 25) + 'px';
+    }, false);
+  </script>
+</body>
+
+</html>
