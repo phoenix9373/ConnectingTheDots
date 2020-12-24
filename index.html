@@ -25,11 +25,12 @@
 
   <!-- CSS 파일 불러오기 -->
   <link rel="stylesheet" href="style.css">
-  <script src="main.js" defer></script>
+  <script defer src="main.js"></script>
   <!-- defer는 js 파일을 모두 불러온 뒤에 웹을 실행한다. -->
 </head>
 
 <body>
+  <!-- name convention : block__element--else -->
 
   <!-- Navbar -->
   <nav id="navbar">
@@ -49,10 +50,12 @@
 
   <!-- Home -->
   <section id="home">
-    <img src="assets/profile.jpg" alt="Jingo's profile photo" class="home__avatar">
-    <h1 class="home_title">Hello, <br> I'm Google Engineer</h1>
-    <h2 class="home_description">A FullStack Engineer Finding A Wonderful Dream</h2>
-    <button class="home__contact">Contact Me</button>
+    <div class="home__wrap">
+      <img src="assets/profile.jpg" alt="Jingo's profile photo" class="home__avatar">
+      <h1 class="home_title">Hello, <br> I'm Google Engineer</h1>
+      <h2 class="home_description">A FullStack Engineer Finding A Wonderful Dream</h2>
+      <button class="home__contact">Contact Me</button>
+    </div>
   </section>
 
 
@@ -69,7 +72,7 @@
           <i class="fab fa-css3-alt"></i>
           <i class="fab fa-js-square"></i>
         </div>
-        <div class="major__title">FE - Basic</div>
+        <div class="major__title">FE</div>
         <div class="major__description">HTML, CSS, JavaScript</div>
       </div>
       <div class="major">
@@ -81,28 +84,35 @@
         <div class="major__description">Vue, React, React Nature</div>
       </div>
     </div>
-    <div class="about__jobs">
-      <img src="assets/school.png" alt="HanYang" class="job__logo">
-      <p class="job__name">HanYang University - Industrial Engineering</p>
-      <p class="job__period">2013 Mon - 2020 Aug</p>
-    </div>
-    <div class="about__jobs">
-      <img src="assets/ssafy.png" alt="SSAFY" class="job__logo">
-      <p class="job__name">SAMSUNG SW Academy For Youth</p>
-      <p class="job__period">2020 July - Until Now</p>
-    </div>
+    <ul class="about__recode">
+      <li class="recode__jobs">
+        <img src="assets/school.png" alt="HanYang" class="job__logo">
+        <div class="job__description">
+          <p class="job__name">HanYang University - Industrial Engineering</p>
+          <p class="job__period">2013 Mon - 2020 Aug</p>
+        </div>
+      </li>
+      <li class="recode__jobs">
+        <img src="assets/ssafy.png" alt="SSAFY" class="job__logo">
+        <div class="job__description">
+          <p class="job__name">SAMSUNG SW Academy For Youth</p>
+          <p class="job__period">2020 July - Until Now</p>
+        </div>
+      </li>
+    </ul>
   </section>
 
   <!-- Skills -->
   <section id="skills">
     <h1>Skills</h1>
-    <h2>Skills & Attributes</h2>
+    <h3>Skills & Attributes</h3>
     <p>새로운 기술을 배우는 것을 즐기는 사람입니다. 한 가지 주제로 다양한 사람들과 이야기하면서 프로젝트를 진행할 때 의욕과 리더십, 팔로우십으로 성장을 도모합니다. 개인 작업을 통해 커리어를 향상하도록
       노력합니다.
     </p>
     <div class="skillset">
       <div class="skillset__left">
         <h3 class="skillset__title">Skills</h3>
+        <!-- skill 부분 -->
         <div class="skill">
           <div class="skill__description">
             <span>HTML</span>
@@ -139,6 +149,7 @@
             <div class="skill_value"></div>
           </div>
         </div>
+        <!-- skill 마지막 -->
       </div>
       <div class="skillset__right">
         <div class="tools">
@@ -167,7 +178,7 @@
     <h1>My Works</h1>
     <h3>Projects</h3>
     <div class="work__categories">
-      <button class="category__btn">All <span class="category__count">5</span></button>
+      <button class="category__btn active">All <span class="category__count">5</span></button>
       <button class="category__btn">Front-end <span class="category__count">3</span></button>
       <button class="category__btn">Back-end <span class="category__count">1</span></button>
       <button class="category__btn">Mobile <span class="category__count">1</span></button>
