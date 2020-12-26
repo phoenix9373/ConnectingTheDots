@@ -6,20 +6,24 @@
   --color-brown-lighter: #bcaaa4;
   --color-brown: #8d6e63;
   --color-ivory: rgb(255, 255, 230);
-  --color-white: #fafafa;
+  --color-light-white: #fafafa;
+  --color-white: #eeeeee;
   --color-black: #212121;
   --color-black-dark: #000000;
-  --color-black-light: #484848;
-  --color-gray-light: #e0e0e0;
-  --color-gray-dark: #aeaeae;
+  --color-black-light: #212121;
+  --color-gray: #616161;
+  --color-gray-light: #8e8e8e;
+  --color-gray-dark: #494949;
   --color-red: #f50057;
   --color-blue: #3d5afe;
   --color-blue-light: #3e68ff;
+  --color-blue-swallow: #63a0d1;
   --color-html: #fd7e14;
   --color-vue: #41b883;
   --color-react: #61dafb;
   --color-css: #29a9df;
   --color-js: #efd81d;
+  --color-pink: #ffcdd2;
 
   /* Padding, Margin */
   --padding-l: 8px;
@@ -44,7 +48,7 @@
 
   /* Image Size */
   --project-img: 50px;
-  --profile-img: 200px;
+  --avatar-img: 250px;
 
   /* Font Family */
   --roboto: 'Roboto', sans-serif;
@@ -52,6 +56,9 @@
 
   /* Size Border Radius */
   --size-border-radius: 4px;
+
+  /* Animation */
+  --animation-duration: 300ms;
 }
 
 /* Global Set Up */
@@ -77,6 +84,13 @@ li {
   list-style: none;
 }
 
+button {
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
 /* Typography */
 h1 {
   font-size: var(--font-large);
@@ -94,8 +108,12 @@ h2 {
 
 h3 {
   font-size: var(--font-regular);
-  font-weight: var(--weight-regular);
+  /* font-weight: var(--weight-regular); */
   color: var(--color-black);
+  margin: 4px 0;
+}
+
+p {
   margin: 4px 0;
 }
 
@@ -131,4 +149,178 @@ h3 {
 
 .navbar__menu_item:hover {
   background-color: var(--color-black-light);
+}
+
+/* 2. Home */
+#home {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  padding: 40px;
+}
+
+#home:after {
+  content: '';
+  width: 100%;
+  height: 100%;
+  background: url(assets/background-gray.png) center/cover no-repeat;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  opacity: 0.8;
+}
+
+.home__avatar {
+  width: var(--avatar-img);
+  height: var(--avatar-img);
+  border: 2px solid var(--color-white);
+  border-radius: 50%;
+}
+
+.home_title,
+.home_description {
+  color: var(--color-white);
+}
+
+.home__contact {
+  font-size: var(--font-regular);
+  font-weight: var(--weight-bold);
+  margin: var(--margin-h);
+  padding: var(--padding-l) var(--padding-m);
+  border: 2px solid var(--color-white);
+  border-radius: var(--size-border-radius);
+  color: var(--color-white);
+}
+
+/* Sections Common */
+.section {
+  padding: 50px;
+  text-align: center;
+  /* 최대로 커질 수 있는 크기 */
+  margin: auto;
+}
+
+.section__container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* About */
+.about__majors {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 80px 0;
+}
+
+.major__icon {
+  width: 250px;
+  height: 250px;
+  line-height: 250px;
+  font-size: 75px;
+  border: 1px solid var(--color-blue-swallow);
+  color: var(--color-blue-swallow);
+  border-radius: 50%;
+  margin-bottom: 16px;
+}
+
+/* major__icon이 호버되었을 때, i에만 아래 속성 적용한다. */
+.major__icon i:hover {
+  color: var(--color-pink);
+  transform: rotate(-30deg) scale(1.1);
+  /* 애니메이션은 250 ~ 350사이가 사용자가 느끼기에 적당함. */
+  transition: all var(--animation-duration) ease-in-out;
+}
+
+.major__title,
+.major__description {
+  color: var(--color-black-light);
+}
+
+.major__description {
+  font-size: var(--font-small);
+}
+
+.recode__jobs {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.recode__jobs img {
+  width: 55px;
+  height: auto;
+  margin: 0 16px;
+}
+
+.job__description {
+  text-align: left;
+}
+
+.job__name,
+.job__period {
+  color: var(--color-gray-dark);
+}
+
+.job__name {
+  font-weight: 600;
+  font-size: var(--font-small);
+}
+
+.job__period {
+  font-size: var(--font-micro);
+}
+
+/* Skill */
+
+#skills {
+  background-color: var(--color-ivory);
+}
+
+.skillset {
+  display: flex;
+  background-color: var(--color-gray-light);
+  color: var(--color-white);
+  margin: 20px 0;
+}
+
+.skillset__left {
+  flex-basis: 60%;
+  background-color: var(--color-gray-dark);
+  padding: 20px 40px;
+}
+
+.skillset__title {
+  color: var(--color-white);
+}
+
+.skill {
+  margin-bottom: 8px;
+}
+
+.skill__bar {
+  width: 100%;
+  height: 3px;
+  background-color: var(--color-gray-light);
+}
+
+.skill_value {
+  width: 70%;
+  height: 3px;
+  background-color: var(--color-red);
+}
+
+.skillset__right {
+  flex-basis: 40%;
+}
+
+.tools {
+  background-color: var(--color-gray);
+}
+
+.skill__description {
+  display: flex;
+  justify-content: space-between;
 }
