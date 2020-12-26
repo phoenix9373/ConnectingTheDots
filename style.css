@@ -5,6 +5,7 @@
   --brown-light: #be9c91;
   --brown-lighter: #bcaaa4;
   --brown: #8d6e63;
+  --ivory: rgb(255, 255, 230);
   --white: #fafafa;
   --black: #212121;
   --black-dark: #000000;
@@ -61,6 +62,7 @@
 
 a {
   text-decoration: none;
+  color: black;
 }
 
 li {
@@ -129,8 +131,12 @@ button {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: var(--padding-h);
+  padding: var(--padding-m);
   background-color: var(--black);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
 }
 
 /* Navbar - Logo */
@@ -216,7 +222,7 @@ button {
 
 /* 3. About */
 #about {
-  background-color: ivory;
+  background-color: var(--ivory);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -566,8 +572,24 @@ h3 {
 }
 
 #contact {
-  padding: calc(var(--padding-h) * 3);
+  padding-top: calc(var(--padding-h) * 2);
+  padding-bottom: var(--padding-h);
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: var(--ivory);
+  font-family: var(--roboto);
+}
+
+.contact__links {
+  margin: var(--margin-h) 0;
+}
+
+.contact__links i {
+  font-size: calc(var(--font-macro) * 1.5);
+  margin: var(--margin-l);
+}
+
+.contact__rights {
+  font-family: var(--roboto);
 }

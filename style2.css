@@ -1,0 +1,57 @@
+:root {
+  /* Color */
+  /* 테마 색깔은 무엇으로 할까 */
+  --color-brown-dark: #5f4339;
+  --color-brown-light: #be9c91;
+  --color-brown-lighter: #bcaaa4;
+  --color-brown: #8d6e63;
+  --color-ivory: rgb(255, 255, 230);
+  --color-white: #fafafa;
+  --color-black: #212121;
+  --color-black-dark: #000000;
+  --color-black-light: #484848;
+  --color-gray-light: #e0e0e0;
+  --color-gray-dark: #aeaeae;
+  --color-red: #f50057;
+  --color-blue: #3d5afe;
+  --color-blue-light: #3e68ff;
+  --color-html: #fd7e14;
+  --color-vue: #41b883;
+  --color-react: #61dafb;
+  --color-css: #29a9df;
+  --color-js: #efd81d;
+
+  /* Padding, Margin */
+  --padding-l: 8px;
+  --padding-m: 12px;
+  --padding-h: 24px;
+
+  --margin-l: 8px;
+  --margin-m: 12px;
+  --margin-h: 24px;
+
+  /* Font Size */
+  --font-large: 48px;
+  --font-medium: 28px;
+  --font-regular: 18px;
+  --font-small: 16px;
+  --font-micro: 14px;
+
+  /* Font Weight */
+  --weight-bold: 700;
+  --weight-semi-bold: 600;
+  --weight-regular: 400;
+
+  /* Image Size */
+  --project-img: 50px;
+  --profile-img: 200px;
+
+  /* Font Family */
+  --roboto: 'Roboto', sans-serif;
+  --openSans: 'Open Sans', sans-serif;
+}
+
+/* 전역 변수 */
+* {
+  box-sizing: border-box;
+}
