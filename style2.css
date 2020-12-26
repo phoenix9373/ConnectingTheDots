@@ -49,11 +49,32 @@
   /* Font Family */
   --roboto: 'Roboto', sans-serif;
   --openSans: 'Open Sans', sans-serif;
+
+  /* Size Border Radius */
+  --size-border-radius: 4px;
 }
 
-/* 전역 변수 */
+/* Global Set Up */
 * {
   box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--openSans);
+
+  /* pointer 지정 */
+  cursor: default;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-white);
+}
+
+li {
+  list-style: none;
 }
 
 /* Typography */
@@ -76,4 +97,38 @@ h3 {
   font-weight: var(--weight-regular);
   color: var(--color-black);
   margin: 4px 0;
+}
+
+/* 1. Navbar */
+#navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--color-black);
+  color: var(--color-white);
+  padding: 0 var(--padding-h);
+}
+
+.navbar__menu {
+  display: flex;
+}
+
+.navbar__logo {
+  font-size: var(--font-medium);
+  font-weight: var(--weight-semi-bold);
+}
+
+.navbar__menu_item {
+  padding: var(--padding-l) var(--padding-m);
+  margin: 0 var(--margin-l);
+  cursor: pointer;
+  border-radius: var(--size-border-radius);
+}
+
+.navbar__menu_item.active {
+  border: 1px solid var(--color-white);
+}
+
+.navbar__menu_item:hover {
+  background-color: var(--color-black-light);
 }
