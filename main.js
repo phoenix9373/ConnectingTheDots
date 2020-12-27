@@ -21,6 +21,7 @@ navbarMenu.addEventListener('click', (event) => {
   if (link === undefined) {
     return;
   }
+  navbarMenu.classList.toggle('active');
 
   scrollIntoView(link);
 });
@@ -87,6 +88,13 @@ workBtnContainer.addEventListener('click', (e) => {
     });
     projectContainer.classList.remove('anim-out');
   }, 300);
+});
+
+// Navbar 768px 이하일 때 햄버거 버튼 클릭하면 내려오도록 만듦.
+// 토글 버튼
+const navbarToggleBtn = document.querySelector('.navbar__toggle-btn');
+navbarToggleBtn.addEventListener('click', () => {
+  navbarMenu.classList.toggle('active');
 });
 
 // 직접 정의한 유틸리티 함수는 가장 밑으로!!

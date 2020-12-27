@@ -440,7 +440,7 @@ ul {
 }
 
 .project__description h3 {
-  color: var(--color-white);
+  color: var(--color-js);
 }
 
 .project__description h3:after {
@@ -566,6 +566,7 @@ ul {
   #navbar {
     flex-direction: column;
     align-items: flex-start;
+    background-color: var(--color-black);
   }
 
   .navbar__menu {
@@ -573,6 +574,11 @@ ul {
     text-align: center;
     width: 100%;
     display: none;
+  }
+
+  .navbar__menu.active {
+    display: block;
+    height: 100%;
   }
 
   .navbar__logo {
