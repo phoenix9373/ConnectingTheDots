@@ -156,11 +156,13 @@ ul {
 }
 
 .navbar__menu_item.active {
-  border: 1px solid var(--color-white);
+  /* border: 1px solid var(--color-white); */
 }
 
 .navbar__menu_item:hover {
   background-color: var(--color-gray-dark);
+  border: 1px solid var(--color-white);
+  padding: calc(var(--padding-l) - 1px) calc(var(--padding-m) - 1px);
 }
 
 /* 2. Home */
@@ -390,6 +392,13 @@ ul {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  transition: all var(--animation-duration) ease-out;
+  opacity: 1;
+}
+
+.work__projects.anim-out {
+  transform: scale(0.98) translateY(40px);
+  opacity: 0;
 }
 
 .project {
@@ -401,6 +410,10 @@ ul {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.project.invisible {
+  display: none;
 }
 
 .project__img {
