@@ -39,6 +39,21 @@ document.addEventListener('scroll', () => {
   home.style.opacity = Math.max(1 - window.scrollY / homeHeight, 0);
 });
 
+// 스크롤 내리면 ArrowUp 버튼이 서서히 보이고, 클릭하면 상단으로 이동.
+const arrowUpBtn = document.querySelector('.arrow-up');
+
+document.addEventListener('scroll', () => {
+  if (window.scrollY > homeHeight / 2) {
+    arrowUpBtn.classList.add('visible');
+  } else {
+    arrowUpBtn.classList.remove('visible');
+  }
+});
+
+arrowUpBtn.addEventListener('click', () => {
+  scrollIntoView('#home');
+});
+
 // 직접 정의한 유틸리티 함수는 가장 밑으로!!
 // 반복되는 코드(scrollTo)
 function scrollIntoView(selector) {
