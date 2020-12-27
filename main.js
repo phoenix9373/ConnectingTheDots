@@ -11,3 +11,17 @@ document.addEventListener('scroll', () => {
     navbar.classList.remove('navbar--dark');
   }
 });
+
+// navbar 버튼을 누르면 해당 section으로 이동
+const navbarMenu = document.querySelector('.navbar__menu');
+navbarMenu.addEventListener('click', (event) => {
+  const link = event.target.dataset.link;
+
+  // == 과 === 차이 인식
+  if (link === undefined) {
+    return;
+  }
+
+  const element = document.querySelector(link);
+  element.scrollIntoView({ behavior: 'smooth' });
+});
