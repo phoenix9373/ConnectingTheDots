@@ -212,6 +212,10 @@ ul {
   color: var(--color-white);
 }
 
+.home__contact:hover {
+  background-color: var(--color-gray-dark);
+}
+
 /* Sections Common */
 .section {
   padding: 50px;
@@ -354,6 +358,7 @@ ul {
   border-radius: var(--size-border-radius);
   font-size: var(--font-regular);
   padding: 8px 48px;
+  position: relative;
 }
 
 .category__btn.selected,
@@ -364,7 +369,7 @@ ul {
 .category__btn.selected .category__count,
 .category__btn:hover .category__count {
   opacity: 1;
-  top: 0;
+  top: 4px;
 }
 
 .category__count {
@@ -375,11 +380,12 @@ ul {
   width: 24px;
   height: 24px;
   line-height: 24px;
+  vertical-align: middle;
   /* span 태그는 컨텐츠를 꽉! 잡는 특성이 있어서 block 성질을 추가해준다. */
   display: inline-block;
-  position: relative;
+  position: absolute;
   top: -20px;
-  left: 4px;
+  right: 16px;
   opacity: 0;
   transition: all var(--animation-duration) ease-in-out;
 }
@@ -558,15 +564,30 @@ ul {
 /* 차이점만 media 쿼리에 작성하자!! */
 /* For below 768px screen width */
 @media screen and (max-width: 768px) {
+  :root {
+    /* media query 값이 적용됬을 때는 아래 설정한 변수가 미리 지정한 부분에 선택된다. */
+    /* Font Size */
+    --font-large: 30px;
+    --font-medium: 18px;
+    --font-regular: 16px;
+    --font-small: 14px;
+    --font-micro: 12px;
+  }
+  .section {
+    padding: 48px;
+  }
+
   .navbar__toggle-btn {
     display: block;
     top: 21px;
+    right: 8px;
   }
 
   #navbar {
     flex-direction: column;
     align-items: flex-start;
     background-color: var(--color-black);
+    padding: 0 16px;
   }
 
   .navbar__menu {
@@ -588,6 +609,7 @@ ul {
   .about__majors {
     flex-direction: column;
     align-items: center;
+    margin: 40px 0;
   }
 
   .major:first-child {
@@ -604,8 +626,39 @@ ul {
     flex-grow: 1;
   }
 
+  .category__btn {
+    margin: 4px 0;
+    min-width: 50%;
+  }
+
+  .category__count {
+  }
+
   .testimonial__avatar {
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
+  }
+
+  .testimonial__avatar:nth-child(odd),
+  .testimonial__avatar:nth-child(even) {
+    margin: 0;
+    margin-bottom: 8px;
+  }
+
+  .testimonial {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .testimonial__speech-bubble {
+    order: 1;
+  }
+
+  .arrow-up {
+    width: 40px;
+    height: 40px;
+    font-size: 25px;
+    bottom: 10px;
+    right: 10px;
   }
 }
