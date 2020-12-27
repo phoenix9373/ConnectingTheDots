@@ -64,6 +64,16 @@ workBtnContainer.addEventListener('click', (e) => {
   if (filter == null) {
     return;
   }
+  // span(category__count) 가 선택되는 문제.
+  // event target
+  const target =
+    e.target.nodeName === 'BUTTON' ? e.target : e.target.parentNode;
+  console.log(target);
+
+  // Projects - 선택된 버튼에 active 할당하기
+  const selected = document.querySelector('.category__btn.selected');
+  selected.classList.remove('selected');
+  target.classList.add('selected');
 
   projectContainer.classList.add('anim-out');
 
