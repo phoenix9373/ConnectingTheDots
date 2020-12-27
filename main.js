@@ -12,12 +12,6 @@ document.addEventListener('scroll', () => {
   }
 });
 
-// 반복되는 코드(scrollTo)
-function scrollIntoView(selector) {
-  const scrollTo = document.querySelector(selector);
-  scrollTo.scrollIntoView({ behavior: 'smooth' });
-}
-
 // navbar 버튼을 누르면 해당 section으로 이동
 const navbarMenu = document.querySelector('.navbar__menu');
 navbarMenu.addEventListener('click', (event) => {
@@ -36,3 +30,18 @@ const homeContactBtn = document.querySelector('.home__contact');
 homeContactBtn.addEventListener('click', () => {
   scrollIntoView('#contact');
 });
+
+// 스크롤 내리면 홈 부분만 transparent 적용.
+const home = document.querySelector('.home__container');
+const homeHeight = home.getBoundingClientRect().height;
+
+document.addEventListener('scroll', () => {
+  home.style.opacity = Math.max(1 - window.scrollY / homeHeight, 0);
+});
+
+// 직접 정의한 유틸리티 함수는 가장 밑으로!!
+// 반복되는 코드(scrollTo)
+function scrollIntoView(selector) {
+  const scrollTo = document.querySelector(selector);
+  scrollTo.scrollIntoView({ behavior: 'smooth' });
+}
