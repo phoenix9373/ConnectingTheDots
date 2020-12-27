@@ -560,7 +560,7 @@ h3 {
 }
 
 /* flex로 height 100% + 가운데 정렬할 때, 부모 요소는 align-items: stretch + 자식 요소 margin: auto로 하면 개꿀 */
-.testimonial .testimonial__speach-bubble {
+.testimonial .testimonial__speech-bubble {
   margin: var(--margin-h) calc(var(--margin-h) * 2);
   padding: var(--padding-h);
   display: flex;
